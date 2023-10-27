@@ -1,0 +1,346 @@
+{
+  "menu": {
+    "chat": "chat",
+    "training": "training",
+    "analytics": "analytics",
+    "administration": "administration",
+    "archive": "archive",
+    "activeChats": "unanswered",
+    "monitoring": "monitoring"
+  },
+  "routes": {
+    "unauthorized": "Unauthorized",
+    "loggedIn": "You are logged in",
+    "loginWithTara": "enter via TARA",
+    "loginWithPassword": "log in",
+    "logout": "log out",
+    "goLoginPage": "go to login page"
+  },
+  "roles": {
+    "administrator": "Administrator",
+    "serviceManager": "Service manager",
+    "customerSupportAgent": "Customer support",
+    "chatbotTrainer": "Chatbot trainer",
+    "analyst": "Analyst",
+    "unauthenticated": "Unauthenticated",
+    "ROLE_ADMINISTRATOR": "administrator",
+    "ROLE_SERVICE_MANAGER": "service manager",
+    "ROLE_CUSTOMER_SUPPORT_AGENT": "customer support",
+    "ROLE_CHATBOT_TRAINER": "chatbot trainer",
+    "ROLE_ANALYST": "analyst",
+    "ROLE_UNAUTHENTICATED": "unauthenticated"
+  },
+  "activeChats": {
+    "selectedChat": "selected chat",
+    "unselected": "Select a chat to begin"
+  },
+  "chatListItem": {
+    "lastMessage": "Last message",
+    "claimChat": "Claim chat",
+    "created": "started",
+    "clientName": "client",
+    "socialSecurityNumber": "client social security number",
+    "clientEmail": "client e-mail",
+    "clientPhoneNumber": "client phone number",
+    "clientChatId": "chat ID",
+    "anonymous": "anonymous",
+    "unassigned": "unassigned",
+    "agentName": "agent",
+    "forwardedTo": "redirected to",
+    "receivedFrom": "received from"
+  },
+  "intentListItem": {
+    "name": "name",
+    "description": "description",
+    "inModel": "in model",
+    "examples": "examples",
+    "openIntent": "open intent"
+  },
+  "trainingCommands": {
+    "label": "select training date and time",
+    "trainLater": "train on selected time",
+    "trainNow": "train now",
+    "information": "In this view, it is possible to train a new bot model based on the data in the training module. Training takes an average of 5-10 minutes, if an error is detected during training, the source data needs to be changed and the model trained again. As long as there is an error in the trained model, it cannot be published to end users.",
+    "inTraining": "training was started: ",
+    "assignedDateDescription": "scheduled training date and time:",
+    "pastDate": "assigned date has to be in the future",
+    "publishButton": "publish model",
+    "publishLabel": "publish the last trained model",
+    "cancelTraining": "cancel training",
+    "trainingCanceled": "scheduled training has been canceled",
+    "confirmPublish": "are you certain you wish to publish the latest model",
+    "unableToPublish": "trained model has errors",
+    "modelTraining": "the model is currently being trained",
+    "modelPublished": "the model has been published",
+    "errorOccurred": "an error was encountered when publishing the model",
+    "deleteExampleConfirmation": "are you certain you wish to delete the example?"
+  },
+  "intents": {
+    "input": {
+      "placeholder": "search to find intent...",
+      "label": "Enter the text"
+    },
+    "buttonLabel": {
+      "all": "all",
+      "inModel": "in model",
+      "withoutExamples": "without examples",
+      "changeName": "rename intent",
+      "addExample": "add example",
+      "removeIntent": "remove intent from model",
+      "addIntent": "add intent to model",
+      "changeRequestExample": "change request example",
+      "saveRequestExample": "save request example",
+      "changeResponse": "change response",
+      "saveResponse": "save response",
+      "change": "change",
+      "save": "save",
+      "cancel": "cancel",
+      "clear": "clear input",
+      "removeExampleField": "remove example field",
+      "closeMarkingOptions": "close marking options",
+      "createIntent": "create intent",
+      "addAsExample": "add as example",
+      "deleteIntent": "delete intent",
+      "deleteExample": "delete"
+    },
+    "toolbox": {
+      "requestExample": "request example",
+      "response": "response",
+      "activities": "intent activities"
+    },
+    "inModel": "yes",
+    "notInModel": "no",
+    "unselected": "Select an intent to begin",
+    "searchIntent": "search intent",
+    "deleteIntentModal": {
+      "header": "Delete intent?",
+      "accept": "yes",
+      "decline": "no"
+    }
+  },
+  "addIntent": {
+    "submitButton": "save",
+    "cancelButton": "cancel",
+    "addExampleButton": "add example",
+    "modalTitle": "create new intent",
+    "intentName": "intent name",
+    "intentDescription": "intent description",
+    "requestExample": "request example",
+    "response": "response",
+    "examples": "add example/examples",
+    "example": "example",
+    "missingInput": "Please fill all the necessary fields",
+    "confirmation": "Intent was added",
+    "examplePending": "Example is being added",
+    "intentPending": "Intent is being added",
+    "existingIntent": "An intent with that name already exists"
+  },
+  "addExample": {
+    "confirmation": "Example added"
+  },
+  "chatMessage": {
+    "event": {
+      "answered": "The conversation ended with an accepted answer",
+      "terminated": "The conversation has been ended for other reasons",
+      "client-left": "The conversation has ended because the customer left",
+      "authenticate": "Please authenticate yourself",
+      "ask-permission": "Please give permission for this operation",
+      "ask-permission-accepted": "Permission granted",
+      "ask-permission-rejected": "Permission refused",
+      "ask-permission-ignored": "Permission for this operation was ignored",
+      "redirected": "Conversation has been redirected to another customer support agent",
+      "contact-information": "Please fill out your contact information",
+      "contact-information-rejected": "Client refused to share contact information",
+      "requested-chat-forward-accepted": "The client agreed to forward the conversation, the conversation has been ended",
+      "requested-chat-forward": "Forwarding request sent",
+      "requested-chat-forward-rejected": "The client refused to forward the conversation"
+    }
+  },
+  "chatToolbox": {
+    "action": {
+      "title": "chat actions",
+      "terminate": "terminate chat",
+      "forceAuthenticate": "force authenticate",
+      "askPermission": "ask for permission",
+      "askContactInformation": "ask contact information",
+      "forward": "forward chat",
+      "forwardInstitution": "forward to institution"
+    },
+    "event": {
+      "answered": "with an accepted answer",
+      "terminated": "due to other reasons",
+      "client-left": "Conversation ended because client left"
+    },
+    "status": {
+      "ended": "ended",
+      "open": "open",
+      "redirected": "redirected"
+    },
+    "info": {
+      "title": "chat info",
+      "endUserUrl": "customer URL",
+      "endUserOs": "customer device"
+    },
+    "modal": {
+      "header": "Chat forwarding",
+      "cancelButtonLabel": "cancel",
+      "forwardButtonLabel": "forward chat",
+      "messagesToForwardLabel": "Select messages to forward",
+      "institutionsToForwardLabel": "Select institution to forward messages to",
+      "selectInstitutionWarningInstitution": "Please select an institution",
+      "selectInstitutionWarningMessage": "Please select at least one message",
+      "forwardRequestSuccess": "Chat forward request sent",
+      "selectInstitutionPlaceholder": "Select institution"
+    }
+  },
+  "toast": {
+    "success": "Success",
+    "info": "Info",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "addUser": {
+    "selectAll": "select all",
+    "confirmation": "User was added",
+    "serverError": "A server error occurred",
+    "duplicateUser": "An user with this ID or login already exists",
+    "missingInput": "Please fill all the necessary fields",
+    "invalidForm": "Please fill all the necessary fields",
+    "modalTitle": "add user",
+    "modifyUserTitle": "modify user",
+    "displayNamePlaceholder": "name displayed to the customer",
+    "idCodePlaceholder": "personal identification code",
+    "idCodePlaceholderHelpText": "personal identification code must have the country prefix, for example EE1234567891011",
+    "rolePlaceholder": "select user roles",
+    "submitButton": "submit",
+    "noUsers": "no users found",
+    "userName": "name",
+    "userPic": "id code",
+    "userRoles": "roles",
+    "missingPrefix": "Please add the country code EE in front of the personal identification code",
+    "wrongIdCodeLength": "The length of the personal identification code is incorrect",
+    "idCodeNumeric": "The personal identification code must contain only numbers, except for the prefix",
+    "invalidIdCode": "Wrong personal identification code",
+    "tooLongDisplayName": "Username can be up to 60 characters long"
+  },
+  "editUser": {
+    "columnHeader": "edit",
+    "confirmation": "user has been successfully updated",
+    "lastAdminWarningMessage": "At least one administrator must exist",
+    "buttonTitle": "modify user"
+  },
+  "deleteUser": {
+    "columnHeader": "remove",
+    "confirm": "confirm",
+    "confirmationContent": "Do you wish to remove the user?",
+    "deleteConfirmation": "User has been successfully removed",
+    "serverError": "A server error occurred",
+    "buttonTitle": "delete user"
+  },
+  "forwardUser": {
+    "modalHeader": "Who should the conversation be forwarded to?",
+    "columnHeader": "forward",
+    "searchByName": "search by name",
+    "buttonTitle": "forward"
+  },
+  "chatArchive": {
+    "start": "start",
+    "end": "end",
+    "search": "search across chats",
+    "clear": "clear",
+    "agent": "name of the agent",
+    "endUserName": "name of the client",
+    "endUserId": "id code of the client",
+    "contactInformation": "contact information",
+    "resolution": "chat resolution",
+    "chatId": "chat ID",
+    "openChat": "view chat",
+    "closeChat": "close chat",
+    "detailTitle": "Selected chat",
+    "emptyTableMessage": "there are no chats",
+    "redirected": "redirected",
+    "history": "Chat history",
+    "refresh": "refresh",
+    "refreshSuccess": "chat history successfully updated",
+    "refreshFail": "chat history update error"
+  },
+  "chatHeader": {
+    "unanswered": "unanswered",
+    "answered": "answered",
+    "archive": "archive",
+    "claimChat": "claim chat",
+    "endChat": "end chat",
+    "agentAwayLabel": "away",
+    "agentOnlineLabel": "online"
+  },
+  "keypad": {
+    "input": {
+      "placeholder": "Enter your message...",
+      "label": "Enter text"
+    },
+    "button": {
+      "label": "Send"
+    },
+    "longMessageWarning": "Sõnum peab olema lühem kui 3000 tähemärki"
+  },
+  "administrate": {
+    "users": "users",
+    "greeting": "greeting",
+    "greetingLabel": "greeting",
+    "greetingMessage": "Bürokratt's automatic greeting, displayed when first opening the chat window",
+    "estGreetingInputPlaceholder": "Enter a greeting for Bürokratt to display...",
+    "sessionLength": "session length",
+    "sessionLengthTitle": "agent's session length",
+    "sessionLengthPlaceholder": "30 min",
+    "sessionLengthHelperText": "Session can be 30 min - 480 min (8h) in length",
+    "sessionLengthConfirmation": "session length has been updated",
+    "sessionLengthServerError": "session length update failed",
+    "enabledLabel": "enabled",
+    "disabledLabel": "disabled",
+    "greetingTextConfirmation": "greeting has been updated",
+    "greetingStatusConfirmation": "greeting status has been updated",
+    "greetingTextServerError": "server error",
+    "greetingStatusServerError": "status update failed",
+    "estimatedWaitingTime": "estimated waiting time",
+    "estimatedWaitingTimeTitle": "the approximate customer waiting time",
+    "estimatedWaitingTimePlaceholder": "10 min",
+    "estimatedWaitingTimeHelperText": "Waiting time is allowed between 1 min and 60 min.",
+    "estimatedWaitingTimeConfirmation": "waiting time has been updated",
+    "estimatedWaitingStatusConfirmation": "waiting time status has been updated",
+    "estimatedWaitingTimeServerError": "waiting time update failed",
+    "estimatedWaitingStatusServerError": "waiting time status update failed",
+    "bot": {
+      "menuLabel": "chatbot",
+      "isActiveLabel": "chatbot",
+      "isActiveDescription": "Bürokratt - an agency-specific chat robot that responds autonomously to customer inquiries."
+    }
+  },
+  "trainingHeader": {
+    "archive": "history",
+    "intents": "intents",
+    "training": "training",
+    "closeChat": "close chat",
+    "closeIntent": "close intent",
+    "addIntent": "add Intent"
+  },
+  "actions": {
+    "save": "save"
+  },
+  "legal": {
+    "EU_SF": "European Structural and Investment Funds (ESIF)",
+    "NEXT_GEN": "European, Union Recovery and Resilience Facility"
+  },
+  "authentication": {
+    "error": "Authentication failed",
+    "expirationModule": {
+      "header": "Your session is about to expire",
+      "description": "Please either extend or end your session",
+      "extend": "extend",
+      "end": "end"
+    }
+  },
+  "generic": {
+    "yes": "yes",
+    "no": "no"
+  }
+}

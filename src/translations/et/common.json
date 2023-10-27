@@ -1,0 +1,345 @@
+{
+  "menu": {
+    "chat": "vestlus",
+    "training": "treening",
+    "analytics": "analüütika",
+    "administration": "haldus",
+    "archive": "ajalugu",
+    "activeChats": "vastamata",
+    "monitoring": "seire"
+  },
+  "routes": {
+    "unauthorized": "Volitamata",
+    "loggedIn": "Olete sisse logitud",
+    "loginWithTara": "sisene TARA kaudu",
+    "loginWithPassword": "sisene",
+    "logout": "välju",
+    "goLoginPage": "mine esilehele"
+  },
+  "roles": {
+    "administrator": "administraator",
+    "serviceManager": "teenuse haldur",
+    "customerSupportAgent": "nõustaja",
+    "chatbotTrainer": "vestlusroboti treener",
+    "analyst": "analüütik",
+    "unauthenticated": "autentimata",
+    "ROLE_ADMINISTRATOR": "administraator",
+    "ROLE_SERVICE_MANAGER": "teenuse haldur",
+    "ROLE_CUSTOMER_SUPPORT_AGENT": "nõustaja",
+    "ROLE_CHATBOT_TRAINER": "vestlusroboti treener",
+    "ROLE_ANALYST": "analüütik",
+    "ROLE_UNAUTHENTICATED": "autentimata"
+  },
+  "activeChats": {
+    "selectedChat": "praegune vestlus",
+    "unselected": "Alustamiseks ava vestlus"
+  },
+  "chatListItem": {
+    "lastMessage": "Viimane sõnum",
+    "claimChat": "Võta vestlus",
+    "created": "alustatud",
+    "clientName": "vestleja",
+    "socialSecurityNumber": "isikukood",
+    "clientEmail": "e-mail",
+    "clientPhoneNumber": "telefoninumber",
+    "clientChatId": "ID",
+    "anonymous": "anonüümne",
+    "unassigned": "määramata",
+    "agentName": "agent",
+    "forwardedTo": "ümber suunatud",
+    "receivedFrom": "vastu võetud"
+  },
+  "intentListItem": {
+    "name": "nimetus",
+    "description": "lühikirjeldus",
+    "inModel": "mudelis",
+    "examples": "näiteid",
+    "openIntent": "ava teema"
+  },
+  "trainingCommands": {
+    "label": "vali treenimise kuupäev ja kellaaeg",
+    "trainLater": "treeni valitud kuupäeval",
+    "trainNow": "treeni kohe",
+    "information": "Antud vaates on võimalik treenida uus kratimudel lähtuvalt treeningmoodulis olevate andmete põhjal. Treenimine võtab aega keskmiselt 5-10 minutit, kui treenimise käigus tuvastatakse viga, siis tuleb lähteandmestikku muuta ning mudel uuesti treenida. Seni kuni esineb viga treenitud mudelis pole võimalik seda avalikustada lõppkasutajatele.",
+    "inTraining": "treenimist alustati: ",
+    "assignedDateDescription": "määratud treenimise kuupäev ja kellaaeg:",
+    "pastDate": "valitud kuupäev peab olema tulevikus",
+    "publishButton": "avalikusta mudel",
+    "publishLabel": "avalikusta viimati treenitud mudel",
+    "cancelTraining": "tühista treening",
+    "trainingCanceled": "planeeritud treening on tühistatud",
+    "confirmPublish": "kas olete kindel, et soovite viimase treenitud mudeli avaldada?",
+    "unableToPublish": "treenitud mudelis esineb vigu",
+    "modelTraining": "mudel on hetkel treenimisel",
+    "modelPublished": "mudel avalikustatud",
+    "publishError": "mudeli avalikustamisel esines viga",
+    "deleteExampleConfirmation": "kas olete kindel, et soovite näidet kustutada?"
+  },
+  "intents": {
+    "input": {
+      "placeholder": "otsi teemat",
+      "label": "Sisesta tekst"
+    },
+    "buttonLabel": {
+      "all": "kõik",
+      "inModel": "mudelis",
+      "withoutExamples": "näideteta",
+      "changeName": "nimeta teema ümber",
+      "addExample": "lisa näide",
+      "removeIntent": "eemalda teema mudelist",
+      "addIntent": "lisa teema mudelisse",
+      "changeRequestExample": "muuda etaloni",
+      "saveRequestExample": "salvesta etalon",
+      "changeResponse": "muuda vastust",
+      "saveResponse": "salvesta vastus",
+      "change": "muuda",
+      "save": "salvesta",
+      "cancel": "tühista",
+      "clear": "tühjenda väli",
+      "removeExampleField": "eemalda näite väli",
+      "closeMarkingOptions": "peida märkimise valikud",
+      "createIntent": "loo teema",
+      "addAsExample": "lisa näitena",
+      "deleteIntent": "kustuta teema",
+      "deleteExample": "kustuta"
+    },
+    "toolbox": {
+      "requestExample": "testlugu",
+      "response": "pöördumise vastus",
+      "activities": "teema tegevused"
+    },
+    "inModel": "jah",
+    "notInModel": "ei",
+    "unselected": "Alustamiseks vali teema",
+    "searchIntent": "otsi teemat",
+    "deleteIntentModal": {
+      "header": "kustuta teema?",
+      "accept": "jah",
+      "decline": "ei"
+    }
+  },
+  "addIntent": {
+    "submitButton": "salvesta",
+    "cancelButton": "tühista",
+    "addExampleButton": "lisa näide",
+    "modalTitle": "loo uus teema",
+    "intentName": "teema nimetus",
+    "intentDescription": "teema lühikirjeldus",
+    "requestExample": "testlugu",
+    "response": "pöördumise vastus",
+    "examples": "lisa näide/näited",
+    "example": "näide",
+    "missingInput": "Palun täitke kõik väljad",
+    "confirmation": "Teema lisati",
+    "examplePending": "Näidet lisatakse",
+    "intentPending": "Teemat lisatakse",
+    "existingIntent": "Sellise nimega teema on juba olemas"
+  },
+  "addExample": {
+    "confirmation": "Näide lisatud"
+  },
+  "chatMessage": {
+    "event": {
+      "answered": "Vestlus lõppes rahuldava vastusega",
+      "terminated": "Vestlus lõpetati muudel põhjustel",
+      "client-left": "Vestlus lõppes kuna kasutaja lahkus",
+      "authenticate": "Palume toimingu sooritamiseks isik tuvastada",
+      "ask-permission": "Palume toimingu sooritamiseks nõusolekut",
+      "ask-permission-accepted": "Nõusolek toimingu sooritamiseks antud",
+      "ask-permission-rejected": "Nõusolekust toimingu sooritamiseks keelduti",
+      "ask-permission-ignored": "Nõusolekut toimingu sooritamiseks eirati",
+      "redirected": "Vestlus on üle antud teisele nõustajale",
+      "contact-information": "Palume sisestada oma kontaktandmed",
+      "contact-information-rejected": "Kasutaja keeldus kontaktinfot jagamast",
+      "requested-chat-forward": "Suunamise päring edastati kasutajale",
+      "requested-chat-forward-accepted": "Kasutaja nõustus suunamisega, vestlus lõpetatud",
+      "requested-chat-forward-rejected": "Kasutaja keeldus suunamisest"
+    }
+  },
+  "chatToolbox": {
+    "action": {
+      "title": "vestluse tegevused",
+      "terminate": "lõpeta vestlus",
+      "forceAuthenticate": "küsi autentimist",
+      "askContactInformation": "küsi kontaktandmeid",
+      "askPermission": "küsi nõusolekut",
+      "forward": "suuna kolleegile",
+      "forwardInstitution": "suuna asutusele"
+    },
+    "event": {
+      "answered": "aktsepteeritud vastusega",
+      "terminated": "muudel põhjustel"
+    },
+    "status": {
+      "ended": "lõpetatud",
+      "redirected": "ümber suunatud",
+      "open": "pooleli"
+    },
+    "info": {
+      "title": "vestluse info",
+      "endUserUrl": "lähtekoht",
+      "endUserOs": "seade"
+    },
+    "modal": {
+      "header": "vestluse suunamine teise asutusse",
+      "cancelButtonLabel": "tühista",
+      "forwardButtonLabel": "suuna vestlus",
+      "messagesToForwardLabel": "vali vestluse suunamiseks olulised sõnumid",
+      "institutionsToForwardLabel": "vali vestluse suunamiseks asutus",
+      "selectInstitutionWarningInstitution": "Vestluse suunamiseks tuleb valida asutus",
+      "selectInstitutionWarningMessage": "Vestluse suunamiseks tuleb valida vähemalt üks sõnum",
+      "forwardRequestSuccess": "Vestluse suunamise päring edastatud",
+      "selectInstitutionPlaceholder": "vali rippmenüüst asutus"
+    }
+  },
+  "toast": {
+    "success": "Edu",
+    "info": "Teavitus",
+    "warning": "Hoiatus",
+    "error": "Ebaedu"
+  },
+  "addUser": {
+    "selectAll": "vali kõik",
+    "confirmation": "Kasutaja lisati",
+    "serverError": "Tekkis probleem serveriga",
+    "duplicateUser": "Selle ID või nimega kasutaja juba on olemas",
+    "missingInput": "Palun täitke kõik väljad",
+    "invalidForm": "Palun täitke kõik väljad",
+    "modalTitle": "lisa kasutaja",
+    "modifyUserTitle": "muuda kasutajat",
+    "displayNamePlaceholder": "kliendile kuvatav nimi",
+    "idCodePlaceholder": "isikukood",
+    "idCodePlaceholderHelpText": "Isikukood peab algama riigi eesliitega, näiteks EE1234567891011",
+    "rolePlaceholder": "kasutaja rollid",
+    "submitButton": "Kinnita",
+    "noUsers": "kasutajaid ei leitud",
+    "userName": "nimi",
+    "userPic": "isikukood",
+    "userRoles": "rollid",
+    "missingPrefix": "Palun lisage isikukoodile riigi eesliide EE",
+    "wrongIdCodeLength": "Isikukoodi pikkus on vale",
+    "idCodeNumeric": "Isikukood peab sisaldama ainult arve v.a. eesliide",
+    "invalidIdCode": "Vale isikukood",
+    "tooLongDisplayName": "Kasutaja nime pikkus tohib olla kuni 60 tähemärki."
+  },
+  "editUser": {
+    "columnHeader": "muuda",
+    "confirmation": "kasutaja muudeti",
+    "lastAdminWarningMessage": "Vähemalt üks administraator peab eksisteerima",
+    "buttonTitle": "muuda kasutajat"
+  },
+  "deleteUser": {
+    "columnHeader": "eemalda",
+    "confirm": "kinnita",
+    "confirmationContent": "kas soovite kasutaja eemaldada?",
+    "deleteConfirmation": "Kasutaja eemaldati edukalt",
+    "serverError": "Tekkis probleem serveriga",
+    "buttonTitle": "kustuta kasutaja"
+  },
+  "forwardUser": {
+    "modalHeader": "kellele vestlus suunata?",
+    "columnHeader": "suuna",
+    "searchByName": "otsi nime järgi",
+    "buttonTitle": "suuna edasi"
+  },
+  "chatArchive": {
+    "start": "algusaeg",
+    "end": "lõppaeg",
+    "search": "otsi üle vestluste",
+    "clear": "lähtesta",
+    "agent": "nõustaja nimi",
+    "endUserName": "nimi",
+    "endUserId": "isikukood",
+    "contactInformation": "kontaktandmed",
+    "resolution": "vestluse tulemus",
+    "chatId": "ID",
+    "openChat": "ava vestlus",
+    "closeChat": "peida vestlus",
+    "detailTitle": "Valitud vestlus",
+    "emptyTableMessage": "vestlused puuduvad",
+    "redirected": "suunatud",
+    "history": "Vestluse ajalugu",
+    "refresh": "värskenda",
+    "refreshSuccess": "vestluse ajalugu uuendati",
+    "refreshFail": "vestluse ajaloo uuendamise viga"
+  },
+  "chatHeader": {
+    "unanswered": "vastamata",
+    "answered": "aktiivsed",
+    "archive": "ajalugu",
+    "claimChat": "võta üle",
+    "endChat": "sulge vestlus",
+    "agentAwayLabel": "eemal",
+    "agentOnlineLabel": "kohal"
+  },
+  "keypad": {
+    "input": {
+      "placeholder": "Kirjutage oma sõnum...",
+      "label": "Sisesta tekst"
+    },
+    "button": {
+      "label": "saada"
+    },
+    "longMessageWarning": "Sõnum ei tohi ületada 3000 tähemärki"
+  },
+  "administrate": {
+    "users": "kasutajad",
+    "greeting": "tervitussõnum",
+    "greetingLabel": "tervitussõnum",
+    "greetingMessage": "Bürokrati automaatne tervitussõnum, mida kuvatakse esimese sõnumina vestlusakna avamisel.",
+    "estGreetingInputPlaceholder": "Sisesta Bürokrati poolt edastatav tervitussõnum...",
+    "sessionLength": "sessiooni pikkus",
+    "sessionLengthTitle": "kasutaja sessiooni pikkus",
+    "sessionLengthPlaceholder": "30 min",
+    "sessionLengthHelperText": "Sessiooni pikkus on lubatud vahemikus 30 min - 480 min (8h)",
+    "sessionLengthConfirmation": "sessiooni pikkus uuendatud",
+    "sessionLengthServerError": "sessiooni pikkuse uuendamine ebaõnnestus",
+    "enabledLabel": "sees",
+    "disabledLabel": "väljas",
+    "greetingTextConfirmation": "sõnum uuendatud",
+    "greetingStatusConfirmation": "staatus uuendatud",
+    "greetingTextServerError": "sõnumi lisamine ebaõnnestus",
+    "greetingStatusServerError": "sõnumi staatuse uuendamine ebaõnnestus",
+    "estimatedWaitingTime": "ooteaja hinnang",
+    "estimatedWaitingTimeTitle": "kliendi ligikaudne ooteaeg",
+    "estimatedWaitingTimePlaceholder": "10 min",
+    "estimatedWaitingTimeHelperText": "Ooteag on lubatud vahemikus 1 min - 60 min.",
+    "estimatedWaitingTimeConfirmation": "ooteaeg uuendatud",
+    "estimatedWaitingStatusConfirmation": "ooteaja staatus uuendatud",
+    "estimatedWaitingTimeServerError": "ooteaja lisamine ebaõnnestus",
+    "estimatedWaitingStatusServerError": "ooteaja staatuse uuendamine ebaõnnestus",
+    "bot": {
+      "menuLabel": "vestlusrobot",
+      "isActiveLabel": "vestlusrobot",
+      "isActiveDescription": "Bürokratt ehk asutuse spetsiifiline vestlusrobot, kes vastab autonoomselt kliendipöördumistele."
+    }
+  },
+  "trainingHeader": {
+    "archive": "ajalugu",
+    "intents": "teemad",
+    "training": "treenimine",
+    "closeChat": "sulge vestlus",
+    "closeIntent": "sulge teema",
+    "addIntent": "lisa teema"
+  },
+  "actions": {
+    "save": "salvesta"
+  },
+  "legal": {
+    "EU_SF": "Euroopa Liidu Struktuuri- ja Investeerimisfondid",
+    "NEXT_GEN": "Euroopa Liidu taaste- ja vastupidavusrahastu"
+  },
+  "authentication": {
+    "error": "Autentimine ebaõnnestus",
+    "expirationModule": {
+      "header": "sessioon on aegumas",
+      "description": "Palun pikendage või lõpetage oma sessioon",
+      "extend": "pikenda",
+      "end": "lõpeta"
+    }
+  },
+  "generic": {
+    "yes": "jah",
+    "no": "ei"
+  }
+}
