@@ -22,7 +22,7 @@ const useNewMessageNotification = (): void => {
     return () => {
       document.removeEventListener('visibilitychange', onVisibilityChange);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (newMessagesAmount === 0) return;
