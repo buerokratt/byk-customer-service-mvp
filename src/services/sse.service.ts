@@ -1,6 +1,6 @@
 import { RuuterResponse } from '../model/ruuter-response.model';
 
-const ruuterUrl = window._env_.RUUTER_API_URL;
+const notificationNodeUrl = window._env_.NOTIFICATION_NODE_URL;
 
 interface SseInstance {
   onMessage: <T>(handleData: (data: T) => void) => void;
@@ -8,7 +8,7 @@ interface SseInstance {
 }
 
 const sse = (url: string): SseInstance => {
-  const eventSource = new EventSource(`${ruuterUrl}/sse/${url}`, { withCredentials: true });
+  const eventSource = new EventSource(`${notificationNodeUrl}/sse/notifications${url}`);
 
   const onMessage = <T>(handleData: (data: T) => void) => {
     eventSource.onmessage = (event: MessageEvent) => {

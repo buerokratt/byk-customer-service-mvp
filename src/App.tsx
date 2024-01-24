@@ -12,6 +12,7 @@ declare global {
   interface Window {
     _env_: {
       RUUTER_API_URL: string;
+      NOTIFICATION_NODE_URL: string;
       TIM_API_URL: string;
       TARA_REDIRECT_URL: string;
       ANALYTICS_URL: string;
