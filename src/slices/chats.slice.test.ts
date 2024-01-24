@@ -29,7 +29,6 @@ const initialState: ChatsState = {
   selectedChatMessages: [],
   matchingChatIds: [],
   searchKey: '',
-  lastReadMessageDate: '',
   activeTab: CHAT_TABS.TAB_UNANSWERED,
   askPermissionTimeouts: [],
   newMessagesAmount: 0,
@@ -214,7 +213,7 @@ describe('All chats slice', () => {
       const message = { id: '1', chatId: '3', authorTimestamp: '', authorFirstName: '', authorRole: '', updated: '10' };
       const action = { type: getMessages.fulfilled.type, payload: [message] };
       const state = reducer(initialState, action);
-      expect(state).toEqual({ ...initialState, lastReadMessageDate: message.updated, selectedChatMessages: [message] });
+      expect(state).toEqual({ ...initialState, selectedChatMessages: [message] });
     });
 
     it('should set matching chat ids when getChatIdsMatchingMessageSearch is fulfilled', () => {
