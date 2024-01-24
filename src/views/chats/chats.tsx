@@ -52,7 +52,7 @@ const Chats = (): JSX.Element => {
             {selectedChat ? (
               <>
                 <div className="chat-history">
-                  <ChatContent selectedChat={selectedChat} />
+                  <ChatContent />
                   <ChatKeypad />
                 </div>
 
