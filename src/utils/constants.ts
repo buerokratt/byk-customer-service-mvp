@@ -74,6 +74,7 @@ export enum RUUTER_ENDPOINTS {
   POST_FORWARD_REQUEST = '/cs-post-redirect-request-message',
   REMOVE_ATTACHED_CHATS = '/cs-remove-attached-chats',
   POST_MESSAGE_WITH_NEW_EVENT = '/cs-post-message-with-new-event',
+  GET_ACTIVE_CHATS = '/csa/active-chats',
 }
 
 export enum ADMINISTRATION_TABS {

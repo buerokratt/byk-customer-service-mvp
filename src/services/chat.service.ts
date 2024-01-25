@@ -9,6 +9,10 @@ class ChatService {
     return http.post(RUUTER_ENDPOINTS.GET_ALL_ACTIVE_CHATS);
   }
 
+  getActiveChats(): Promise<Chat[]> {
+    return http.get(RUUTER_ENDPOINTS.GET_ACTIVE_CHATS);
+  }
+  
   getAllEndedChats(): Promise<Chat[]> {
     return http.post(RUUTER_ENDPOINTS.GET_ALL_ENDED_CHATS);
   }
