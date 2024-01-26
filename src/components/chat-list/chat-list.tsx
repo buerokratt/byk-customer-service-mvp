@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Chat } from '../../model/chat.model';
@@ -10,18 +10,24 @@ const ChatList = (props: HTMLAttributes<HTMLElement>): JSX.Element => {
   const chats = useSelector((state: RootState) => state.chats.activeChats);
   const activeTab = useSelector((state: RootState) => state.chats.activeTab);
 
-  const filterChatsByActiveTab = (chatsToFilter: Chat[]) =>
-    chatsToFilter.filter((chat) => {
-      if (CHAT_TABS.TAB_ANSWERED === activeTab) return chat.customerSupportId !== '';
-      if (CHAT_TABS.TAB_UNANSWERED === activeTab) return chat.customerSupportId === null || chat.customerSupportId === '';
-      return chat;
-    });
+  const chatTypeFilter = (chat: Chat) => {
+    if (CHAT_TABS.TAB_ANSWERED === activeTab)
+      return chat.customerSupportId !== '';
+    if (CHAT_TABS.TAB_UNANSWERED === activeTab)
+      return chat.customerSupportId === null || chat.customerSupportId === '';
+    return chat;
+  };
 
+  const buildChatItem = (chat: Chat) => <ChatListItem key={chat.id} chat={chat} />;
+
+  const filteredChats = useMemo(() => 
+    chats.filter(chatTypeFilter).map(buildChatItem),
+    [chats, activeTab]
+  );
+  
   return (
     <ChatListStyles {...props}>
-      {filterChatsByActiveTab(chats).map((chat: Chat) => (
-        <ChatListItem key={chat.id} chat={chat} />
-      ))}
+      {filteredChats}
     </ChatListStyles>
   );
 };

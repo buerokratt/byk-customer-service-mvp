@@ -1,28 +1,15 @@
-import React, { HTMLAttributes, useEffect } from 'react';
+import React, { HTMLAttributes } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { Chat } from '../../../model/chat.model';
 import { MessageModel } from '../../../model/message.model';
-import { getMessages } from '../../../slices/chats.slice';
-import { RootState, useAppDispatch } from '../../../store';
+import { RootState } from '../../../store';
 import Message from './message/message';
 import useGetNewMessages from '../../../hooks/useGetNewMessages';
 
-type ChatContentProps = {
-  selectedChat: Chat | null;
-} & HTMLAttributes<HTMLElement>;
-
-const ChatContent = (props: ChatContentProps): JSX.Element => {
-  const { selectedChat } = props;
-  const dispatch = useAppDispatch();
+const ChatContent = (props: HTMLAttributes<HTMLElement>): JSX.Element => {
   const allMessages = useSelector((state: RootState) => state.chats.selectedChatMessages);
-  const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated);
 
-  useGetNewMessages(selectedChat?.id);
-
-  useEffect(() => {
-    if (selectedChat?.id != null && isAuthenticated) dispatch(getMessages(selectedChat.id));
-  }, [dispatch, selectedChat?.id, isAuthenticated]);
+  useGetNewMessages();
 
   return (
     <ChatContentStyles {...props}>

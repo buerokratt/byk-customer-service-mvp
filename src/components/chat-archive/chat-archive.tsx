@@ -34,8 +34,8 @@ const ChatArchive = (): JSX.Element => {
       <ChatArchiveTable isOpen={Boolean(selectedChat)} />
       {selectedChat && (
         <SelectedChatStyles>
-          <ChatContentHeader selectedChat={selectedChat} />
-          <ChatContent selectedChat={selectedChat} />
+          <ChatContentHeader />
+          <ChatContent />
         </SelectedChatStyles>
       )}
     </>

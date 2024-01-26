@@ -1,17 +1,18 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useMemo } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { Chat } from '../../../../model/chat.model';
 import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from '../../../../utils/constants';
+import { useAppSelector } from '../../../../store';
+import { selectEndedSelectedChat } from '../../../../slices/chats.slice';
 
-type ChatContentProps = {
-  selectedChat: Chat;
-} & HTMLAttributes<HTMLElement>;
-
-const ChatContentHeader = (props: ChatContentProps): JSX.Element => {
-  const { selectedChat } = props;
-  const endUserEmail = selectedChat?.contactsMessage?.match(EMAIL_REGEX);
-  const endUserPhoneNumber = selectedChat?.contactsMessage?.match(PHONE_NUMBER_REGEX);
+const ChatContentHeader = (): JSX.Element => {
+  const selectedChat = useAppSelector((state) => selectEndedSelectedChat(state));
+  const [endUserEmail, endUserPhoneNumber] = useMemo(() => {
+    return [
+      selectedChat?.contactsMessage?.match(EMAIL_REGEX),
+      selectedChat?.contactsMessage?.match(PHONE_NUMBER_REGEX)
+    ];
+  }, [selectedChat?.contactsMessage]);
   const { t } = useTranslation();
 
   return (

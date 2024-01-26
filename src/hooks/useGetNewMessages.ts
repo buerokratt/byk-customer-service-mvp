@@ -1,18 +1,20 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../store';
 import sse from '../services/sse.service';
-import { addNewMessages, selectActiveSelectedChat } from '../slices/chats.slice';
+import { addNewMessages, getMessages, selectActiveSelectedChat, selectEndedSelectedChat } from '../slices/chats.slice';
 import { MessageModel } from '../model/message.model';
 
-const useGetNewMessages = (chatId: string | undefined): void => {
-  const { isAuthenticated } = useAppSelector((state) => state.authentication);
-  const { lastReadMessageDate } = useAppSelector((state) => state.chats);
-  const selectedActiveChat = useAppSelector((state) => selectActiveSelectedChat(state));
+const useGetNewMessages = (): void => {
+  const isAuthenticated = useAppSelector(state => state.authentication.isAuthenticated);
+  const selectedActiveChat = useAppSelector(state => selectActiveSelectedChat(state));
   const dispatch = useAppDispatch();
+  const chatId = useAppSelector((state) => selectEndedSelectedChat(state)?.id);
 
   useEffect(() => {
-    if (!chatId || chatId === '-1' || !isAuthenticated || !selectedActiveChat) return undefined;
-    const sseInstance = sse(`cs-get-new-messages?chatId=${chatId}&lastRead=${lastReadMessageDate.split('+')[0]}`);
+    if (!chatId || chatId === '-1' || !isAuthenticated || !selectedActiveChat)
+      return;
+
+    const sseInstance = sse(`/${chatId}`);
 
     sseInstance.onMessage((data: MessageModel[]) => {
       dispatch(addNewMessages(data));
@@ -20,8 +22,14 @@ const useGetNewMessages = (chatId: string | undefined): void => {
 
     return () => {
       sseInstance.close();
-    };
-  }, [isAuthenticated, dispatch, lastReadMessageDate, chatId, selectedActiveChat]);
+    }
+  }, [chatId, isAuthenticated, selectedActiveChat]);
+
+
+  useEffect(() => {
+    if (chatId && isAuthenticated)
+      dispatch(getMessages(chatId));
+  }, [chatId, isAuthenticated]);
 };
 
 export default useGetNewMessages;
