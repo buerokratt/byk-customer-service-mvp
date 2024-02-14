@@ -17,6 +17,7 @@ export interface ChatsState {
   selectedChatMessages: MessageModel[];
   matchingChatIds: string[];
   searchKey: string;
+  lastReadMessageDate: string;
   activeTab: string;
   askPermissionTimeouts: AskPermissionTimeoutModel[];
   newMessagesAmount: number;
@@ -33,6 +34,7 @@ const initialState: ChatsState = {
   selectedChatMessages: [],
   matchingChatIds: [],
   searchKey: '',
+  lastReadMessageDate: '',
   activeTab: CHAT_TABS.TAB_UNANSWERED,
   askPermissionTimeouts: [],
   newMessagesAmount: 0,
@@ -210,6 +212,7 @@ export const chatsSlice = createSlice({
 
         state.selectedChatMessages.push(...receivedMessages);
       }
+      state.lastReadMessageDate = state.selectedChatMessages[state.selectedChatMessages.length - 1]?.updated || state.lastReadMessageDate;
     },
     updateActiveChatMessage: (state, action: PayloadAction<MessageModel>) => {
       state.selectedChatMessages = state.selectedChatMessages.map((message) => (message.id === action.payload.id ? action.payload : message));
@@ -262,6 +265,7 @@ export const chatsSlice = createSlice({
     });
     builder.addCase(getMessages.fulfilled, (state, action) => {
       state.selectedChatMessages = action.payload;
+      state.lastReadMessageDate = state.selectedChatMessages[state.selectedChatMessages.length - 1].updated || '';
     });
     builder.addCase(getChatIdsMatchingMessageSearch.fulfilled, (state, action) => {
       state.matchingChatIds = action.payload.map((result) => result.chatId);
