@@ -17,6 +17,7 @@ export const initialChatsState: ChatsState = {
   selectedChatMessages: [],
   matchingChatIds: [],
   searchKey: '',
+  lastReadMessageDate: '',
   activeTab: CHAT_TABS.TAB_UNANSWERED,
   askPermissionTimeouts: [],
   newMessagesAmount: 0,

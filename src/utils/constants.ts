@@ -75,6 +75,7 @@ export enum RUUTER_ENDPOINTS {
   REMOVE_ATTACHED_CHATS = '/cs-remove-attached-chats',
   POST_MESSAGE_WITH_NEW_EVENT = '/cs-post-message-with-new-event',
   GET_ACTIVE_CHATS = '/csa/active-chats',
+  GET_NEW_MESSAGES = '/get-new-messages',
 }
 
 export enum ADMINISTRATION_TABS {

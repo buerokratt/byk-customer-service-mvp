@@ -48,6 +48,10 @@ class ChatService {
   sendMessageWithNewEvent(message: MessageModel): Promise<void> {
     return http.post(RUUTER_ENDPOINTS.POST_MESSAGE_WITH_NEW_EVENT, message);
   }
+
+  getNewMessages(chatId: string, timeRangeBegin: string): Promise<MessageModel[]> {
+    return http.post(RUUTER_ENDPOINTS.GET_NEW_MESSAGES, {chatId: chatId, lastRead: timeRangeBegin});
+  }
 }
 
 export default new ChatService();
