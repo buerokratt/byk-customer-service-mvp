@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../store';
+import { RootState, useAppDispatch, useAppSelector } from '../store';
 import sse from '../services/sse.service';
 import { addNewMessages, getMessages, selectActiveSelectedChat, selectEndedSelectedChat } from '../slices/chats.slice';
 import { MessageModel } from '../model/message.model';
 import chatService from '../services/chat.service';
+import { useSelector } from 'react-redux';
 
-const useGetNewMessages = (): void => {
-  const isAuthenticated = useAppSelector(state => state.authentication.isAuthenticated);
+const useGetNewMessages = (chatId: string | undefined): void => {
   const selectedActiveChat = useAppSelector(state => selectActiveSelectedChat(state));
   const { lastReadMessageDate } = useAppSelector((state) => state.chats);
   const dispatch = useAppDispatch();
   const [sseUrl, setSseUrl] = useState('');
-  const chatId = useAppSelector((state) => selectEndedSelectedChat(state)?.id);
   const [lastReadMessageTimestampValue, setLastReadMessageTimestampValue] = useState('');
+  const isAuthenticated = useSelector((state: RootState) => state.authentication.isAuthenticated);
   
   useEffect(() => {
     if(lastReadMessageDate && !lastReadMessageTimestampValue){
@@ -21,13 +21,12 @@ const useGetNewMessages = (): void => {
   }, [lastReadMessageDate]);
 
   useEffect(() => {
-    if(!chatId) {
+    if(!chatId || chatId === '-1') {
       setSseUrl('');
-    }
-    else if (chatId && lastReadMessageTimestampValue) {
+    } else if (chatId) {
       setSseUrl(`/${chatId}`);
     }
-  }, [chatId, lastReadMessageTimestampValue, isAuthenticated, selectedActiveChat]);
+  }, [chatId, lastReadMessageTimestampValue, selectedActiveChat]);
 
   useEffect(() => {
     let events: EventSource | undefined;

@@ -1,23 +1,31 @@
-import React, { useContext, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import ChatArchive from '../../components/chat-archive/chat-archive';
-import ChatHeader from '../../components/chat-header/chat-header';
-import ChatList from '../../components/chat-list/chat-list';
-import ChatContent from '../../components/selected-chat/content/chat-content';
-import ChatKeypad from '../../components/selected-chat/content/keypad/chat-keypad';
-import ChatToolbox from '../../components/selected-chat/toolbox/chat-toolbox';
-import useNewMessageNotification from '../../hooks/useNewMessageNotification';
-import { RootState, useAppDispatch, useAppSelector } from '../../store';
-import { CHAT_TABS } from '../../utils/constants';
-import { selectActiveSelectedChat, setErrorToastMessage } from '../../slices/chats.slice';
-import useGetActiveChats from '../../hooks/useGetActiveChats';
-import { successNotification, warningNotification } from '../../utils/toast-notifications';
-import { ToastContext } from '../../App';
+import React, { useContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import ChatArchive from "../../components/chat-archive/chat-archive";
+import ChatHeader from "../../components/chat-header/chat-header";
+import ChatList from "../../components/chat-list/chat-list";
+import ChatContent from "../../components/selected-chat/content/chat-content";
+import ChatKeypad from "../../components/selected-chat/content/keypad/chat-keypad";
+import ChatToolbox from "../../components/selected-chat/toolbox/chat-toolbox";
+import useNewMessageNotification from "../../hooks/useNewMessageNotification";
+import { RootState, useAppDispatch, useAppSelector } from "../../store";
+import { CHAT_TABS } from "../../utils/constants";
+import {
+  selectActiveSelectedChat,
+  setErrorToastMessage,
+} from "../../slices/chats.slice";
+import useGetActiveChats from "../../hooks/useGetActiveChats";
+import {
+  successNotification,
+  warningNotification,
+} from "../../utils/toast-notifications";
+import { ToastContext } from "../../App";
 
 const Chats = (): JSX.Element => {
-  const selectedChat = useAppSelector((state) => selectActiveSelectedChat(state));
+  const selectedChat = useAppSelector((state) =>
+    selectActiveSelectedChat(state)
+  );
   const activeTab = useSelector((state: RootState) => state.chats.activeTab);
   const { t } = useTranslation();
   const { successToast, errorToast } = useAppSelector((state) => state.chats);
@@ -28,13 +36,14 @@ const Chats = (): JSX.Element => {
   useNewMessageNotification();
 
   useEffect(() => {
-    if (successToast !== '') successNotification(toastContext, t(successToast), t('toast.success'));
+    if (successToast !== "")
+      successNotification(toastContext, t(successToast), t("toast.success"));
   }, [t, toastContext, successToast]);
 
   useEffect(() => {
-    if (errorToast !== '') {
-      warningNotification(toastContext, t(errorToast), t('toast.warning'));
-      dispatch(setErrorToastMessage(''));
+    if (errorToast !== "") {
+      warningNotification(toastContext, t(errorToast), t("toast.warning"));
+      dispatch(setErrorToastMessage(""));
     }
   }, [t, toastContext, dispatch, errorToast]);
 
@@ -52,14 +61,14 @@ const Chats = (): JSX.Element => {
             {selectedChat ? (
               <>
                 <div className="chat-history">
-                  <ChatContent />
+                  <ChatContent selectedChat={selectedChat} />
                   <ChatKeypad />
                 </div>
 
                 <ChatToolbox className="chat-toolbox" />
               </>
             ) : (
-              <h1 className="chat-unselected">{t('activeChats.unselected')}</h1>
+              <h1 className="chat-unselected">{t("activeChats.unselected")}</h1>
             )}
           </>
         )}

@@ -15,6 +15,6 @@ describe("SelectedChat component", () => {
   };
 
   it("should render selected chat content", () => {
-    render(<ChatContent />);
+    render(<ChatContent selectedChat={selectedChat} />);
   });
 });
