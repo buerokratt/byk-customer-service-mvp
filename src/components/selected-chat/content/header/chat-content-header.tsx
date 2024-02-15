@@ -1,16 +1,21 @@
-import React, { HTMLAttributes, useMemo } from 'react';
-import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
-import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from '../../../../utils/constants';
-import { useAppSelector } from '../../../../store';
-import { selectEndedSelectedChat } from '../../../../slices/chats.slice';
+import React, { HTMLAttributes, useMemo } from "react";
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from "../../../../utils/constants";
+import { useAppSelector } from "../../../../store";
+import { selectEndedSelectedChat } from "../../../../slices/chats.slice";
+import { Chat } from "../../../../model/chat.model";
 
-const ChatContentHeader = (): JSX.Element => {
-  const selectedChat = useAppSelector((state) => selectEndedSelectedChat(state));
+type ChatContentProps = {
+  selectedChat: Chat;
+} & HTMLAttributes<HTMLElement>;
+
+const ChatContentHeader = (props: ChatContentProps): JSX.Element => {
+  const { selectedChat } = props;
   const [endUserEmail, endUserPhoneNumber] = useMemo(() => {
     return [
       selectedChat?.contactsMessage?.match(EMAIL_REGEX),
-      selectedChat?.contactsMessage?.match(PHONE_NUMBER_REGEX)
+      selectedChat?.contactsMessage?.match(PHONE_NUMBER_REGEX),
     ];
   }, [selectedChat?.contactsMessage]);
   const { t } = useTranslation();
@@ -19,33 +24,34 @@ const ChatContentHeader = (): JSX.Element => {
     <ChatContentHeaderStyles>
       <div className="header-left">
         <div>
-          <strong>{t('chatListItem.clientName')}:</strong>
-          &nbsp;{`${selectedChat?.endUserFirstName} ${selectedChat?.endUserLastName}`}
+          <strong>{t("chatListItem.clientName")}:</strong>
+          &nbsp;
+          {`${selectedChat?.endUserFirstName} ${selectedChat?.endUserLastName}`}
         </div>
         <div>
-          <strong>{t('chatListItem.socialSecurityNumber')}:</strong>
+          <strong>{t("chatListItem.socialSecurityNumber")}:</strong>
           &nbsp;{selectedChat?.endUserId}
         </div>
         {selectedChat?.forwardedToName && (
           <div>
-            <strong>{t('chatListItem.forwardedTo')}:</strong>
+            <strong>{t("chatListItem.forwardedTo")}:</strong>
             &nbsp;{selectedChat?.forwardedToName}
           </div>
         )}
         {selectedChat?.receivedFrom && (
           <div>
-            <strong>{t('chatListItem.receivedFrom')}:</strong>
+            <strong>{t("chatListItem.receivedFrom")}:</strong>
             &nbsp;{selectedChat?.receivedFrom}
           </div>
         )}
       </div>
       <div className="header-right">
         <div>
-          <strong>{t('chatListItem.clientEmail')}:</strong>
+          <strong>{t("chatListItem.clientEmail")}:</strong>
           &nbsp;{endUserEmail}
         </div>
         <div>
-          <strong>{t('chatListItem.clientPhoneNumber')}:</strong>
+          <strong>{t("chatListItem.clientPhoneNumber")}:</strong>
           &nbsp;{endUserPhoneNumber}
         </div>
       </div>

@@ -19,7 +19,7 @@ const selectedChat = {
 
 describe("Chat content header", () => {
   it("should render", () => {
-    render(<ChatContentHeader />);
+    render(<ChatContentHeader selectedChat={selectedChat} />);
     screen.getByText(
       `${selectedChat.endUserFirstName} ${selectedChat.endUserLastName}`
     );
