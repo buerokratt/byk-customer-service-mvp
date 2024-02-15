@@ -44,7 +44,7 @@ const useGetNewMessages = (chatId: string | undefined): void => {
     return () => {
       events?.close();
     };
-  }, [chatId]);
+  }, [sseUrl]);
 
   useEffect(() => {
     if (chatId && isAuthenticated)
