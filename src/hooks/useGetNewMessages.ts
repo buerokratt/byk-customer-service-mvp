@@ -30,7 +30,7 @@ const useGetNewMessages = (chatId: string | undefined): void => {
 
   useEffect(() => {
     let events: EventSource | undefined;
-    if (sseUrl) {  
+    if (chatId) {  
       const onMessage = async () => {    
         const messages: MessageModel[] = await chatService.getNewMessages(chatId ?? "",lastReadMessageTimestampValue.split('+')[0]);
         if (messages.length != 0) {
@@ -44,7 +44,7 @@ const useGetNewMessages = (chatId: string | undefined): void => {
     return () => {
       events?.close();
     };
-  }, [sseUrl]);
+  }, [chatId]);
 
   useEffect(() => {
     if (chatId && isAuthenticated)
