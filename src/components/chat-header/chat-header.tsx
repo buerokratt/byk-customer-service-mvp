@@ -70,7 +70,7 @@ const ChatHeader = (): ReactElement => {
               (
               <small>
                 {allChats
-                  .filter((chat: Chat) => chat.status === 'OPEN')
+                  .filter((chat: Chat) => chat.status === 'OPEN' || chat.status === 'REDIRECTED')
                   .reduce(
                     (count: number, chat: Chat) => (chat.customerSupportDisplayName === null || chat.customerSupportDisplayName === '' ? count + 1 : count),
                     0,
@@ -86,7 +86,7 @@ const ChatHeader = (): ReactElement => {
               (
               <small>
                 {allChats
-                  .filter((chat: Chat) => chat.status === 'OPEN')
+                  .filter((chat: Chat) => chat.status === 'OPEN' || chat.status === 'REDIRECTED')
                   .reduce((count: number, chat: Chat) => (chat.customerSupportDisplayName !== '' ? count + 1 : count), 0)}
               </small>
               )
