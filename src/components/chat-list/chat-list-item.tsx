@@ -50,7 +50,7 @@ const ChatListItem = (props: ChatListItemProps): JSX.Element => {
       </div>
       <p className="last-message">
         <span className="symbol">&#10149;</span>
-        {truncateTo120(chat.lastMessage)}
+        {truncateTo120(chat.lastMessage.replaceAll(/\\n/g, '\n'))}
       </p>
       <div className="bottom">
         <p>
